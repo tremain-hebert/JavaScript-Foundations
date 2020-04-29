@@ -100,13 +100,12 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 function variableInterestRate(principal, interestRate, years){
-    for (i=0; i<10; i++){
+    for (let i = interestRate -.02; i <=interestRate + .02; i=i+.005){
         let Name = "Tremain"
-        let monthlyInterestRate = interestRate / 12;
+        let monthlyInterestRate = i / 12;
         let periods = years * 12;
         let monthlyRate = (principal) * ((monthlyInterestRate) * Math.pow( 1 + monthlyInterestRate,periods)) / (Math.pow( 1 + monthlyInterestRate , periods) -1);
-        console.log(Name + ", with an interest rate of " + interestRate + ", your monthly rate is $" + monthlyRate);
-        interestRate + .005;
+        console.log(Name + ", with an interest rate of " + i.toFixed(3) + ", your monthly rate is $" + monthlyRate.toFixed(2));
     }
 }
 variableInterestRate(200000, .05, 30);
